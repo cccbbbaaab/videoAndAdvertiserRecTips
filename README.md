@@ -283,7 +283,7 @@ $$当 p(wt_{k}) \sim Laplace(wt_{i}, \sigma)时，p_{i}(wt_{k}) = e^{-\frac{|wt_
 
 $$ wt_{i}是样本i的观看时长，为真实label值，wt_{k}是时长分桶第k个桶的桶内均值或者桶边界，此处以桶边界为例 $$
 
-$$ \sigma 为超参数，可以设置为定值，也可以label_aware，如 \sigma = 1.5 \cdot \sqrt{wt}，label越大，\sigma 越大，可根据后验数据分析确定 \sigma 的分布形态 $$
+$$ \sigma 为超参数，可以设置为定值，也可以label\_aware，如 \sigma = 1.5 \cdot \sqrt{wt}，label越大，\sigma 越大，可根据后验数据分析确定 \sigma 的分布形态 $$
 
 $$ p_{i}(wt_{k})是计算样本 {i} 在各个分桶上的分布， p^\prime_{i}(wt_{k})为归一化的概率值，这样保证了样本 {i} 在各个分桶上的概率加和=1，也符合多分类softmax的定义。 $$
 
@@ -384,7 +384,7 @@ https://arxiv.org/pdf/2206.06003
 - 定性解释
 直观想象一下，假设我们要使用一个函数 $f(x)$ 来拟合如图所示的蓝色点，我们必然不可能让函数经过每一个点，一种较好的拟合方式如红线所示，对于局部点误差较大，但对整体点平均误差最小。在这种情况下，对于分布在红线左右的点，红线其实拟合的是他们的中间状态(可能是均值/中位数等，取决于使用的误差定义)，因此预估输出表现出的现象即为「高区间低估，低区间高估」。
 
-![7.jpg](https://github.com/ShaoQiBNU/videoRecTips/blob/main/imgs/7.jpg)
+![7.jpg](https://github.com/cccbbbaaab/videoAndAdvertiserRecTips/blob/main/imgs/7.jpg)
 
 
 通用的回归损失函数的收敛目标一般是样本点的均值或中值，这就导致了预估分布相比原始分布更加向“中心”靠拢，从而导致了「高区间低估，低区间高估」。
